@@ -1,16 +1,19 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon (click)="this.sideNav.open()"  *ngIf="!sideNav?.opened">menu</mat-icon>
     <mat-icon (click)="this.sideNav.close()" *ngIf="sideNav?.opened">close</mat-icon>
+</button> -->
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" onclick="myFunction()">
+  <mat-icon>menu</mat-icon>
 </button>
-  <span>LP News</span>
+  
 </mat-toolbar>
 
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav="matSidenav">
-      <img class="avatar mat-elavation-z8" src="https://cdn4.vectorstock.com/i/thumb-large/50/08/news-alerts-breaking-logo-tv-design-element-vector-24575008.jpg" alt="">
-      <h4 class="name">Let's Program</h4>
+  <mat-sidenav id="menu" #sidenav="matSidenav">
+      <img class="avatar mat-elavation-z8" src="https://media.istockphoto.com/id/1264074047/vector/breaking-news-background.jpg?s=612x612&w=0&k=20&c=C5BryvaM-X1IiQtdyswR3HskyIZCqvNRojrCRLoTN0Q=" alt="">
+      <h4 class="name">Choose a news provider</h4>
       <mat-divider></mat-divider>
 
       <ng-container *ngFor="let source of sources">
@@ -47,7 +50,7 @@
                                   display: -webkit-box;" class="tracking-widest text-gray-800 text-sm">{{article.publishedAt | date:'medium'}}</h4>
                               </div>
                               <h2 class="text-lg text-gray-900 font-medium title-font mb-4 overflow-hidden">{{article.title}}</h2>
-                              <p class="leading-relaxed text-base" [innerHtml]="article.description"></p><span><a class="text-blue-500" href="{{article.url}}" target="_blank">read more....</a></span>
+                              <p class="leading-relaxed text-base" [innerHtml]="article.description"></p><span><a class="text-blue-500" href="{{article.url}}" target="_blank">Read more....</a></span>
                           </div>
                       </div>
                   </ng-container>
