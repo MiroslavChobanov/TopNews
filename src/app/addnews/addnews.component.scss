@@ -155,10 +155,11 @@ figure.snip1237.hover:after {
   transform: skew(-45deg) translateX(-75%);
 }
 
-.articles{
+.main{
     display: flex;
     justify-content: space-evenly;
     margin-top: 5%;
+    flex-wrap: wrap;
 }
 
 .top-btn{
@@ -175,4 +176,8 @@ figure.snip1237.hover:after {
 
 .btn-primary{
     background-color: green;
+}
+
+.articles{
+    max-width: 30%;
 }

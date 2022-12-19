@@ -11,7 +11,7 @@ import { NewsModel } from './addnews.model';
 export class AddnewsComponent implements OnInit{
   formValue !: FormGroup;
   newsModelObj: NewsModel = new NewsModel();
-
+  newsData !: any;
   constructor(private formbuilder: FormBuilder, private api  : ApiService) {
 
   }
@@ -23,6 +23,7 @@ export class AddnewsComponent implements OnInit{
       author : [''],
       date : [''],
     })
+    this.getAllNews();
   }
 
   postNewsDetails(){
@@ -38,9 +39,25 @@ export class AddnewsComponent implements OnInit{
       let ref = document.getElementById('cancel');
       ref?.click();
       this.formValue.reset();
+      this.getAllNews();
     },
     err=>{
       alert('Someting went wrong.');
+    })
+  }
+
+  getAllNews(){
+    this.api.getNews()
+    .subscribe(res=>{
+      this.newsData = res;
+    })
+  }
+
+  deleteNews(row: any){
+    this.api.deleteNews(row.id)
+    .subscribe(res=>{
+      alert("News deleted");
+      this.getAllNews();
     })
   }
 }

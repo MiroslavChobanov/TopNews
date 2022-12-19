@@ -1,41 +1,24 @@
 <div class="top-btn">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add News</button>
 </div>
-<div class="articles">
-    
+<div class="main">
+<div class="articles" *ngFor="let row of newsData">
 <figure class="snip1237">
     <div class="image">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample74.jpg" alt="sample74"/><i class="ion-ios-clock-outline"></i>
       <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
     </div>
     <figcaption>
-      <h3>The World Ended Yesterday</h3>
-      <p>I don't know which is worse, ...that everyone has his price, or that the price is always so low.</p>
+      <h3>{{row.name}}</h3>
+      <p>{{row.field}}</p>
       <a href="login" class="read-more">Read More</a>
+      <span>{{row.author}}</span>
+      <span>{{row.date}}</span>
+      <button class="btn btn-primary">Edit</button>
+      <button (click)="deleteNews(row)" class="btn btn-secondary">Delete</button>
     </figcaption>
   </figure>
-  <figure class="snip1237 hover">
-    <div class="image">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/><i class="ion-ios-partlysunny-outline"></i>
-      <div class="date"><span class="day">22</span><span class="month">Nov</span></div>
-    </div>
-    <figcaption>
-      <h3>Sample Article Heading</h3>
-      <p>My family is dysfunctional and my parents won't empower me. Consequently I'm not self actualized.</p>
-      <a href="login" class="read-more">Read More</a>
-    </figcaption>
-  </figure>
-  <figure class="snip1237">
-    <div class="image">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample84.jpg" alt="sample84"/><i class="ion-ios-star-outline"></i>
-      <div class="date"><span class="day">26</span><span class="month">Nov</span></div>
-    </div>
-    <figcaption>
-      <h3>Another Sample Heading</h3>
-      <p>You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.</p>
-      <a href="topnews" class="read-more">Read More</a>
-    </figcaption>
-  </figure>
+</div>
 </div>
 
   
