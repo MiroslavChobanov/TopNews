@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "Test News",
+      "field": "Test Field",
+      "author": "Test Author",
+      "date": "Test Date"
+    },
+    {
+      "id": 3,
+      "name": "Test News123",
+      "field": "Test Field123",
+      "author": "Test Author123",
+      "date": "Test Date123"
+    },
+    {
+      "id": 4,
+      "name": "Another test",
+      "field": "field",
+      "author": "author",
+      "date": "date"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

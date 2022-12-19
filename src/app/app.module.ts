@@ -46,6 +46,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddnewsComponent } from './addnews/addnews.component';
 import { TopnewsComponent } from './topnews/topnews.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { TopnewsComponent } from './topnews/topnews.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
