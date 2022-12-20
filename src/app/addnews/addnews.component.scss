@@ -164,6 +164,13 @@ figure.snip1237.hover:after {
 
 .top-btn{
     text-align: center;
+    margin-top: 3%;
+}
+
+.top-btn button{
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 20px 60px;
 }
 
 .top-btn button{
@@ -180,4 +187,18 @@ figure.snip1237.hover:after {
 
 .articles{
     max-width: 30%;
+}
+
+#edit-btn{
+    margin-left: 45%;
+    margin-right: 5%;
+}
+
+figcaption p, span{
+    font-size: 14px;
+}
+
+figcaption span{
+    font-style: italic;
+    font-size: 12px;
 }

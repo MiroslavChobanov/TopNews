@@ -6,16 +6,15 @@
 <figure class="snip1237">
     <div class="image">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample74.jpg" alt="sample74"/><i class="ion-ios-clock-outline"></i>
-      <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+      <div class="date"><span class="day"></span><span class="month">{{row.date}}</span></div>
     </div>
     <figcaption>
-      <h3>{{row.name}}</h3>
+      <h2>{{row.name}}</h2>
       <p>{{row.field}}</p>
-      <a href="login" class="read-more">Read More</a>
       <span>{{row.author}}</span>
-      <span>{{row.date}}</span>
-      <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-      <button (click)="deleteNews(row)" class="btn btn-secondary">Delete</button>
+      <br>
+      <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="edit-btn">Edit</button>
+      <button (click)="deleteNews(row)" class="btn btn-secondary" id="delete-btn">Delete</button>
     </figcaption>
   </figure>
 </div>
