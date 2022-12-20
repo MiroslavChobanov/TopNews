@@ -4,13 +4,15 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AddnewsComponent } from './addnews/addnews.component';
 import { TopnewsComponent } from './topnews/topnews.component';
+import { AuthGuard } from './shared/auth.guard';
+import { RoleGuard } from './shared/role.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'login', pathMatch: 'full'},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'addnews',component:AddnewsComponent},
-  {path:'topnews',component:TopnewsComponent}
+  {path:'addnews',component:AddnewsComponent, canActivate:[RoleGuard]},
+  {path:'topnews',component:TopnewsComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({
