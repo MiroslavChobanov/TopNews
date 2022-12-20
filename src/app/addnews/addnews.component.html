@@ -1,5 +1,5 @@
 <div class="top-btn">
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add News</button>
+    <button (click)="clickAddNews()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add News</button>
 </div>
 <div class="main">
 <div class="articles" *ngFor="let row of newsData">
@@ -14,7 +14,7 @@
       <a href="login" class="read-more">Read More</a>
       <span>{{row.author}}</span>
       <span>{{row.date}}</span>
-      <button class="btn btn-primary">Edit</button>
+      <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
       <button (click)="deleteNews(row)" class="btn btn-secondary">Delete</button>
     </figcaption>
   </figure>
@@ -54,7 +54,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="postNewsDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showAdd" (click)="postNewsDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateNewsDetails()" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>

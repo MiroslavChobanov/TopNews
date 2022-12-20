@@ -12,6 +12,9 @@ export class AddnewsComponent implements OnInit{
   formValue !: FormGroup;
   newsModelObj: NewsModel = new NewsModel();
   newsData !: any;
+  showAdd !: boolean;
+  showUpdate !: boolean;
+
   constructor(private formbuilder: FormBuilder, private api  : ApiService) {
 
   }
@@ -24,6 +27,12 @@ export class AddnewsComponent implements OnInit{
       date : [''],
     })
     this.getAllNews();
+  }
+
+  clickAddNews(){
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
   }
 
   postNewsDetails(){
@@ -57,6 +66,33 @@ export class AddnewsComponent implements OnInit{
     this.api.deleteNews(row.id)
     .subscribe(res=>{
       alert("News deleted");
+      this.getAllNews();
+    })
+  }
+
+  onEdit(row: any){
+    this.showAdd = false;
+    this.showUpdate = true;
+
+    this.newsModelObj.id = row.id;
+    this.formValue.controls['name'].setValue(row.name);
+    this.formValue.controls['field'].setValue(row.field);
+    this.formValue.controls['author'].setValue(row.author);
+    this.formValue.controls['date'].setValue(row.date);
+  }
+
+  updateNewsDetails(){
+    this.newsModelObj.name=this.formValue.value.name;
+    this.newsModelObj.field=this.formValue.value.field;
+    this.newsModelObj.author=this.formValue.value.author;
+    this.newsModelObj.date=this.formValue.value.date;
+
+    this.api.updateNews(this.newsModelObj, this.newsModelObj.id)
+    .subscribe(res=>{
+      alert("Updated successfully.");
+      let ref = document.getElementById('cancel');
+      ref?.click();
+      this.formValue.reset();
       this.getAllNews();
     })
   }
