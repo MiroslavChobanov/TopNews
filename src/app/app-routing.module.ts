@@ -6,7 +6,7 @@ import { AddnewsComponent } from './addnews/addnews.component';
 import { TopnewsComponent } from './topnews/topnews.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
+  {path:'',redirectTo:'login', pathMatch: 'full'},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'addnews',component:AddnewsComponent},

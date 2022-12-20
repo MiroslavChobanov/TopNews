@@ -8,13 +8,6 @@
       "date": "Test Date"
     },
     {
-      "id": 4,
-      "name": "Another test",
-      "field": "field",
-      "author": "author",
-      "date": "17 Nov"
-    },
-    {
       "id": 5,
       "name": "New News",
       "field": "abc",
@@ -22,7 +15,15 @@
       "date": "abc"
     }
   ],
-  "comments": [],
+  "userList": [
+    {
+      "firstname": "FirstName",
+      "lastname": "LastName",
+      "email": "email@abc.com",
+      "password": "123456",
+      "id": 1
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
