@@ -29,6 +29,13 @@
       "email": "",
       "password": "",
       "id": 2
+    },
+    {
+      "firstname": "Miroslav",
+      "lastname": "Chobanov",
+      "email": "employee@gmail.com",
+      "password": "123456",
+      "id": 3
     }
   ],
   "profile": {
