@@ -36,6 +36,13 @@
       "email": "employee@gmail.com",
       "password": "123456",
       "id": 3
+    },
+    {
+      "firstname": "Admin",
+      "lastname": "Admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 4
     }
   ],
   "profile": {

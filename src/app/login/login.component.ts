@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit{
 
-  public formValidate !: FormGroup;
   public loginForm !: FormGroup;
 
   constructor(private formBuilder : FormBuilder, private http: HttpClient, private router : Router) {
@@ -18,11 +17,6 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void {
-
-    this.formValidate = this.formBuilder.group({
-      email : ['', Validators.required],
-      password : ['', Validators.required],
-    })
 
     this.loginForm = this.formBuilder.group({
       email:[''],
@@ -57,6 +51,9 @@ export class LoginComponent implements OnInit{
       });
       if(user){
         alert("Login successful");
+        if(this.loginForm.value.email == "admin@gmail.com"){
+          localStorage.setItem('userType','admin')
+      }
         this.loginForm.reset();
         this.router.navigate(['topnews']);
       }else{

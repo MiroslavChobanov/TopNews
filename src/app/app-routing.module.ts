@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'',redirectTo:'login', pathMatch: 'full'},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'addnews',component:AddnewsComponent}, // add canActivate:[RoleGuard]
+  {path:'addnews',component:AddnewsComponent, canActivate:[RoleGuard]},
   {path:'topnews',component:TopnewsComponent} //canActivate:[AuthGuard]
 ];
 
