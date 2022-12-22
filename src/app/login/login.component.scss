@@ -10,10 +10,15 @@
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
 }
 
-.card h1, h6{
+.card h1, h4{
     color: white;
 }
 
 label {
     color: white;
+}
+
+#login-btn{
+    background-color: blue;
+    border-color: none;
 }

@@ -19,29 +19,11 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
 
     this.loginForm = this.formBuilder.group({
-      email:[''],
-      password:['']
+      email:['',Validators.required],
+      password:['', Validators.required]
     })
   }
   login(){
-    // var isChecked = true;
-    // if(!this.formValidate.valid){
-    //   for(var a in this.formValidate.controls){
-    //     this.formValidate.controls[a].markAsDirty();
-    //     this.formValidate.controls[a].updateValueAndValidity();
-    //     isChecked = false;
-    //   }
-    // }
-    // if(this.formValidate.valid){
-    //   alert('Logged in successfully.')
-    //   console.log(this.formValidate.value)
-
-    //   localStorage.setItem('token',"token1234")
-    //   this.formValidate.value.email=="employee@gmail.com" ? localStorage.setItem('userType','employee') : localStorage.setItem('userType', 'admin')
-
-    //   this.formValidate.reset();
-    //   this.router.navigate(['topnews']);
-    // }
 
 
     this.http.get<any>("http://localhost:3000/userList")

@@ -48,6 +48,7 @@ export class TopnewsComponent implements AfterViewInit  {
     .subscribe((res:any)=>{
       this.selectedNewsChannel = source.name
       this.articles = res.articles;
+      this.sideNav.close();
     })
   }
 }
